@@ -1,0 +1,27 @@
+{
+  "name": "preact-typescript-minimal",
+  "version": "1.0.0",
+  "description": "Minimal preact typescript starter",
+  "main": "index.js",
+  "scripts": {
+    "build:info": "npm run build -- --detailed-report",
+    "build:clean": "npm run clean:dist && parcel build src/index.html --public-url ./",
+    "build": "parcel build src/index.html --public-url ./",
+    "clean:dist": "rm -rf dist",
+    "clean:cache": "rm -rf .cache",
+    "deploy": "gh-pages -d ./dist",
+    "start": "parcel src/index.html",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Daniel Perez",
+  "license": "ISC",
+  "dependencies": {
+    "preact": "^8.4.2"
+  },
+  "devDependencies": {
+    "gh-pages": "^2.0.1",
+    "parcel-bundler": "^1.11.0",
+    "sass": "^1.17.2",
+    "typescript": "^3.3.3"
+  }
+}
