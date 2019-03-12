@@ -1,0 +1,2 @@
+.intro__container{display:flex;flex-direction:column;align-items:center}.intro__container>*{width:14rem}.intro__container>*+*{padding-top:1rem}.intro__buttons{display:flex;justify-content:space-between}.app{display:flex;flex-direction:column;min-height:100vh}.app__header{height:4rem;background-color:#000}.app__content{flex-grow:1;display:flex;flex-direction:column;justify-content:center}.app__footer{height:8rem;background-color:#000}
+/*# sourceMappingURL=src.9d1c82e8.css.map */
