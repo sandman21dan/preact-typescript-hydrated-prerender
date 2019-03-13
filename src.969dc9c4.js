@@ -7,6 +7,6 @@ parcelRequire=function(e,r,t,n){var i,o="function"==typeof parcelRequire&&parcel
 },{"preact":"OmAK","./Intro.scss":"SERH"}],"gNvR":[function(require,module,exports) {
 "use strict";var e=this&&this.__importDefault||function(e){return e&&e.__esModule?e:{default:e}};exports.__esModule=!0;var t=require("preact"),r=e(require("../Intro"));require("./App.scss");var a=function(){window.badButtonClick()},s=function(){return t.h("div",{class:"app"},t.h("header",{class:"app__header"}),t.h("div",{class:"app__content"},t.h(r.default,null)),t.h("footer",{class:"app__footer"}))};exports.default=s;
 },{"preact":"OmAK","../Intro":"girQ","./App.scss":"SERH"}],"zo2T":[function(require,module,exports) {
-"use strict";var e=this&&this.__importDefault||function(e){return e&&e.__esModule?e:{default:e}};exports.__esModule=!0;var t=require("preact"),r=e(require("./App")),u=document.getElementById("app");t.render(t.h(r.default,null),document.body,u);
+"use strict";var e=this&&this.__importDefault||function(e){return e&&e.__esModule?e:{default:e}};exports.__esModule=!0;var t=require("preact"),r=e(require("./App")),u=document.getElementById("app");console.log(u),t.render(t.h(r.default,null),document.body,u);
 },{"preact":"OmAK","./App":"gNvR"}]},{},["zo2T"], null)
-//# sourceMappingURL=src.c98bb8a0.js.map
+//# sourceMappingURL=src.969dc9c4.js.map
