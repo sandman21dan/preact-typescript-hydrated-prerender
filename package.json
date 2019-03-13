@@ -5,10 +5,9 @@
   "main": "index.js",
   "scripts": {
     "build:info": "npm run build -- --detailed-report",
-    "build:clean": "npm run clean:dist && parcel build src/index.html --public-url ./",
-    "build": "parcel build src/index.html --public-url ./",
-    "clean:dist": "rm -rf dist",
-    "clean:cache": "rm -rf .cache",
+    "build": "npm run clean:dist && parcel build src/index.html --public-url ./",
+    "clean:dist": "rimraf dist",
+    "clean:cache": "rimraf .cache",
     "deploy": "gh-pages -d ./dist",
     "start": "parcel src/index.html",
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -19,9 +18,15 @@
     "preact": "^8.4.2"
   },
   "devDependencies": {
+    "@types/redux-actions": "^2.3.2",
     "gh-pages": "^2.0.1",
     "parcel-bundler": "^1.11.0",
     "parcel-plugin-prerender": "^1.1.0",
+    "preact-redux": "^2.0.3",
+    "prepack": "^0.2.54",
+    "redux": "^4.0.1",
+    "redux-actions": "^2.6.5",
+    "rimraf": "^2.6.3",
     "sass": "^1.17.2",
     "typescript": "^3.3.3"
   }
