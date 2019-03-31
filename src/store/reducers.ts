@@ -1,29 +1,28 @@
-import { handleAction, Action } from 'redux-actions';
-import { increment, decrement } from './actions';
-import { RootState } from './state.type';
-import { defaultState } from '.';
+import { Action } from 'redux-actions';
+import { combineReducers } from 'redux';
 
-// export const incrementReducer = handleAction(
-//   increment().type,
-//   (state: RootState, action: Action<void>) => ({
-//     counter: state.counter + 1,
-//   }),
-//   defaultState,
-// );
+import { increment, Post, fetchPostsSuccess } from './actions';
+import { RootState } from './state';
 
-export const incrementReducer = (state: RootState, action: Action<void>) => {
+export const incrementReducer = (state: number, action: Action<void>): number => {
   switch (action.type) {
     case increment().type:
-      return { ...state, counter: state.counter + 1 };
+      return state + 1;
     default:
-      return { counter: 0 };
+      return 0;
   }
 };
 
-// const decrementReducer = handleAction(
-//   decrement().type,
-//   (state: RootState, action: Action<void>) => ({
-//     counter: state.counter - 1,
-//   }),
-//   defaultState,
-// );
+export const fetchPostsSuccessReducer = (state: Post[], action: Action<Post[]>): Post[] => {
+  switch (action.type) {
+    case fetchPostsSuccess([]).type:
+      return action.payload;
+    default:
+      return [];
+  }
+};
+
+export default combineReducers<RootState>({
+  counter: incrementReducer,
+  posts: fetchPostsSuccessReducer,
+});

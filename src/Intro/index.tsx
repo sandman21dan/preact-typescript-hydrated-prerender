@@ -1,6 +1,6 @@
 import { h, FunctionalComponent } from "preact";
 import { connect } from "preact-redux";
-import { RootState } from "../store/state.type";
+import { RootState } from "../store/state";
 import { increment } from '../store/actions';
 
 import './Intro.scss';

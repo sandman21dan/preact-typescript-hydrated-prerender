@@ -15,17 +15,19 @@
   "author": "Daniel Perez",
   "license": "ISC",
   "dependencies": {
-    "preact": "^8.4.2"
+    "axios": "^0.18.0",
+    "preact": "^8.4.2",
+    "preact-redux": "^2.0.3",
+    "redux": "^4.0.1",
+    "redux-actions": "^2.6.5",
+    "redux-saga": "^1.0.2"
   },
   "devDependencies": {
     "@types/redux-actions": "^2.3.2",
     "gh-pages": "^2.0.1",
     "parcel-bundler": "^1.11.0",
     "parcel-plugin-prerender": "^1.1.0",
-    "preact-redux": "^2.0.3",
     "prepack": "^0.2.54",
-    "redux": "^4.0.1",
-    "redux-actions": "^2.6.5",
     "rimraf": "^2.6.3",
     "sass": "^1.17.2",
     "typescript": "^3.3.3"
