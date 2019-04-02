@@ -7,6 +7,7 @@ function* postsSaga() {
   try {
     const posts: AxiosResponse<Post[]> = yield call(axios.get, 'https://jsonplaceholder.typicode.com/posts');
     yield put(fetchPostsSuccess(posts.data));
+    document.dispatchEvent(new Event('prerender-trigger'));
   } catch (e) {
     yield put(fetchPostsFail(e));
   }

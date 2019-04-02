@@ -13,8 +13,7 @@ const store = createStore(
   initialState,
   compose(
     applyMiddleware(sagaMiddleware),
-    window['__REDUX_DEVTOOLS_EXTENSION__'] && window['__REDUX_DEVTOOLS_EXTENSION__'](),
-    // Important! add devtools after middleware, otherwise it stops it from running
+    window['__REDUX_DEVTOOLS_EXTENSION__'] ? window['__REDUX_DEVTOOLS_EXTENSION__']() : f => f,
   ),
 );
 
