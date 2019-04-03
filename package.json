@@ -10,7 +10,8 @@
     "clean:cache": "rimraf .cache",
     "deploy": "gh-pages -d ./dist",
     "start": "parcel src/index.html",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest",
+    "test:watch": "jest --watch"
   },
   "author": "Daniel Perez",
   "license": "ISC",
@@ -23,12 +24,15 @@
     "redux-saga": "^1.0.2"
   },
   "devDependencies": {
+    "@types/jest": "^24.0.11",
     "@types/redux-actions": "^2.3.2",
     "gh-pages": "^2.0.1",
+    "jest": "^24.7.0",
     "parcel-bundler": "^1.11.0",
     "parcel-plugin-prerender": "^1.2.0",
     "rimraf": "^2.6.3",
     "sass": "^1.17.2",
+    "ts-jest": "^24.0.1",
     "typescript": "^3.3.3"
   }
 }

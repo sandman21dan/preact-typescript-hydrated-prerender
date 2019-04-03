@@ -6,6 +6,7 @@ import store from "../store";
 import './App.scss';
 import Init from "./Init";
 import Posts from "../Posts";
+import StoreWriter from "../StoreWriter";
 
 const App: FunctionalComponent = () => (
   <Provider store={store}>
@@ -17,6 +18,7 @@ const App: FunctionalComponent = () => (
         <Posts />
       </div>
       <footer class="app__footer"></footer>
+      <StoreWriter />
     </div>
   </Provider>
 );
