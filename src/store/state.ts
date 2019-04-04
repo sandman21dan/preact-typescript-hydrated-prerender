@@ -5,9 +5,19 @@ export interface RootState {
   posts: Post[];
 }
 
-const initialState: RootState = {
+export const initialState: RootState = {
   counter: 0,
   posts: [],
 };
 
-export default initialState;
+function hydrateState() {
+
+}
+
+export default () => {
+  const stateTag = document.getElementById('app-state');
+  if (stateTag) {
+    return JSON.parse(stateTag.innerHTML);
+  }
+  return initialState;
+};
