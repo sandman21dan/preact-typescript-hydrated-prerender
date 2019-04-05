@@ -8,9 +8,14 @@ interface StoreWriterProps {
 
 export const StoreWriter: FunctionalComponent<StoreWriterProps> = ({
   state,
-}) => (
-  <script id="app-state" type="application/json">{ JSON.stringify(state) }</script>
-);
+}) => {
+  const appState = document.getElementById('app-state');
+  if (appState) {
+    appState.innerHTML = JSON.stringify(state);
+  }
+
+  return null
+};
 
 const mapStateToProps = (state: RootState) => ({
   state,

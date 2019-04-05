@@ -10,14 +10,14 @@ export const initialState: RootState = {
   posts: [],
 };
 
-function hydrateState() {
-
-}
-
 export default () => {
   const stateTag = document.getElementById('app-state');
   if (stateTag) {
-    return JSON.parse(stateTag.innerHTML);
+    try {
+      return JSON.parse(stateTag.innerHTML);
+    } catch (e) {
+      return initialState;
+    }
   }
   return initialState;
 };

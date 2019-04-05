@@ -2,12 +2,19 @@ import { h, render } from 'preact';
 
 import { StoreWriter } from './';
 
-let mockDom: HTMLElement;
+let appMount: HTMLElement;
+let appDomState: HTMLScriptElement;
 
 beforeEach(() => {
-  mockDom = document.createElement('div');
+  appMount = document.createElement('div');
   document.body.innerHTML = '';
-  document.body.appendChild(mockDom);
+  document.body.appendChild(appMount);
+
+  appDomState = document.createElement('script');
+  appDomState.id = 'app-state';
+  appDomState.type = 'application/json';
+
+  document.body.appendChild(appDomState);
 });
 
 it('writes the state to the dom', () => {
@@ -22,6 +29,6 @@ it('writes the state to the dom', () => {
     ],
   };
 
-  render(<StoreWriter state={mockState} />, mockDom);
-  expect(mockDom.innerHTML).toContain(JSON.stringify(mockState));
+  render(<StoreWriter state={mockState} />, appMount);
+  expect(appDomState.innerHTML).toContain(JSON.stringify(mockState));
 });

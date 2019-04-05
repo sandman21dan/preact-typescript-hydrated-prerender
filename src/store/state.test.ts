@@ -37,3 +37,21 @@ it('returns the dom loaded state when present', () => {
 
   expect(initialState()).toEqual(expectedState);
 });
+
+describe('empty state script tag', () => {
+  beforeEach(() => {
+    const appDomState = document.createElement('script');
+    appDomState.id = 'app-state';
+    appDomState.type = 'application/json';
+    document.body.appendChild(appDomState);
+  });
+
+  it('doesnt fail when script is not valid JSON', () => {
+    const defaultState: RootState = {
+      counter: 0,
+      posts: [],
+    };
+
+    expect(initialState()).toEqual(defaultState);
+  });
+});
