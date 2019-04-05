@@ -4,21 +4,21 @@ import { combineReducers } from 'redux';
 import { increment, Post, fetchPostsSuccess } from './actions';
 import { RootState } from './state';
 
-export const incrementReducer = (state: number, action: Action<void>): number => {
+export const incrementReducer = (state: number = 0, action: Action<void>): number => {
   switch (action.type) {
     case increment().type:
       return state + 1;
     default:
-      return 0;
+      return state;
   }
 };
 
-export const fetchPostsSuccessReducer = (state: Post[], action: Action<Post[]>): Post[] => {
+export const fetchPostsSuccessReducer = (state: Post[] = [], action: Action<Post[]>): Post[] => {
   switch (action.type) {
     case fetchPostsSuccess([]).type:
       return action.payload;
     default:
-      return [];
+      return state;
   }
 };
 
