@@ -7,18 +7,18 @@ import './Intro.scss';
 
 interface IntroProps {
   counter: number;
-  increment: (arg?: any) => any;
+  onIncrement: (arg?: any) => any;
 }
 
 const Intro: FunctionalComponent<IntroProps> = ({
   counter,
-  increment,
+  onIncrement,
 }) => (
   <section class="intro__container">
     <input type="text" value={counter} />
     <div class="intro__buttons">
       <button>Hello!</button>
-      <button onClick={() => increment()}>More</button>
+      <button onClick={() => onIncrement()}>More</button>
     </div>
   </section>
 );
@@ -28,7 +28,7 @@ const mapStateToProps = (state: RootState) => ({
 });
 
 const mapDispatchToProps = {
-  increment,
+  onIncrement: increment,
 };
 
 export default connect(mapStateToProps, mapDispatchToProps)(Intro);

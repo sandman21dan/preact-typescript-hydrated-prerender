@@ -6,7 +6,7 @@ import { RootState } from "../store/state";
 import './Posts.scss';
 
 const Posts: FunctionalComponent<{ posts: Post[] }> = ({
-  posts
+  posts,
 }) => (
   <section class="post-list">
     <h2>Posts:</h2>

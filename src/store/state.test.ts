@@ -25,7 +25,7 @@ it('returns the dom loaded state when present', () => {
         title: 'Lorem',
         userId: 3,
       },
-    ]
+    ],
   };
 
   const domState = document.createElement('script');
@@ -47,11 +47,11 @@ describe('empty state script tag', () => {
   });
 
   it('doesnt fail when script is not valid JSON', () => {
-    const defaultState: RootState = {
+    const expectedState: RootState = {
       counter: 0,
       posts: [],
     };
 
-    expect(initialState()).toEqual(defaultState);
+    expect(initialState()).toEqual(expectedState);
   });
 });

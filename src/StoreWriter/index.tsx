@@ -14,7 +14,7 @@ export const StoreWriter: FunctionalComponent<StoreWriterProps> = ({
     appState.innerHTML = JSON.stringify(state);
   }
 
-  return null
+  return null;
 };
 
 const mapStateToProps = (state: RootState) => ({
