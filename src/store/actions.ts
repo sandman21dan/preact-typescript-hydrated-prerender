@@ -7,8 +7,10 @@ export const increment = createAction<void>(INCREMENT);
 export const decrement = createAction<void>(DECREMENT);
 
 export const INIT = 'INIT';
+export const INIT_COMPLETE = 'INIT_COMPLETE';
 
 export const init = createAction<void>(INIT);
+export const initComplete = createAction<void>(INIT_COMPLETE);
 
 export interface Post {
   userId: number;

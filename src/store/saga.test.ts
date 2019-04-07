@@ -1,9 +1,10 @@
 import axios from 'axios';
-import MockAdapter from 'axios-mock-adapter';
 import { call, put } from 'redux-saga/effects';
 
 import { postsSaga } from './saga';
-import { Post, fetchPostsSuccess } from './actions';
+import { Post, fetchPostsSuccess, initComplete } from './actions';
+import store from './';
+jest.mock('./');
 
 const postsEndpoint = 'https://jsonplaceholder.typicode.com/posts';
 
@@ -26,6 +27,11 @@ describe('postSaga', () => {
   ] as Post[];
 
   beforeEach(() => {
+    jest.spyOn(store, 'getState').mockReturnValue({
+      counter: 0,
+      posts: [],
+    });
+
     gen = postsSaga();
   });
 
@@ -33,9 +39,24 @@ describe('postSaga', () => {
     expect(gen.next().value).toEqual(call(axios.get, postsEndpoint));
   });
 
-  it('dispatches an action with the response', () => {
+  it('dispatches an action with the response and mark as initialised', () => {
     gen.next();
 
     expect(gen.next({ data: mockResponse }).value).toEqual(put(fetchPostsSuccess(mockResponse)));
+    expect(gen.next().value).toEqual(put(initComplete()));
+  });
+
+  describe('pre fetched posts', () => {
+    beforeEach(() => {
+      jest.spyOn(store, 'getState').mockReturnValue({
+        counter: 3,
+        posts: mockResponse,
+      });
+    });
+
+    it('does not call api when data has already been fetched', () => {
+      expect(gen.next().value).toEqual(put(initComplete()));
+      expect(gen.next().done).toEqual(true);
+    });
   });
 });
