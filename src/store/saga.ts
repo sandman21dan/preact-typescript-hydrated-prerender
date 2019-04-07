@@ -3,7 +3,7 @@ import axios, { AxiosResponse } from 'axios';
 
 import { init, fetchPostsSuccess, Post, fetchPostsFail } from './actions';
 
-function* postsSaga() {
+export function* postsSaga() {
   try {
     const posts: AxiosResponse<Post[]> = yield call(axios.get, 'https://jsonplaceholder.typicode.com/posts');
     yield put(fetchPostsSuccess(posts.data));

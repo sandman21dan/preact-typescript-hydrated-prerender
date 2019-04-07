@@ -4,7 +4,6 @@
   "description": "Minimal preact typescript starter",
   "main": "index.js",
   "scripts": {
-    "build:info": "npm run build -- --detailed-report",
     "build": "npm run clean:dist && parcel build src/index.html --public-url ./",
     "clean:cache": "rimraf .cache",
     "clean:dist": "rimraf dist",
@@ -28,9 +27,11 @@
   "devDependencies": {
     "@types/jest": "^24.0.11",
     "@types/redux-actions": "^2.3.2",
+    "axios-mock-adapter": "^1.16.0",
     "gh-pages": "^2.0.1",
     "jest": "^24.7.0",
     "parcel-bundler": "^1.11.0",
+    "parcel-plugin-bundle-visualiser": "^1.2.0",
     "parcel-plugin-prerender": "^1.2.0",
     "rimraf": "^2.6.3",
     "sass": "^1.17.2",
