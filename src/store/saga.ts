@@ -1,4 +1,4 @@
-import { takeEvery, put, call, all,  } from 'redux-saga/effects';
+import { takeEvery, put, call, all } from 'redux-saga/effects';
 import axios, { AxiosResponse } from 'axios';
 
 import store from './';
