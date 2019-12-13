@@ -38,6 +38,6 @@
     "sass": "^1.17.2",
     "ts-jest": "^24.2.0",
     "tslint": "^5.15.0",
-    "typescript": "^3.3.3"
+    "typescript": "^3.7.3"
   }
 }
