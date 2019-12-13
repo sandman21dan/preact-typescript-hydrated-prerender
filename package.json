@@ -28,16 +28,16 @@
   "devDependencies": {
     "@types/jest": "^24.0.23",
     "@types/redux-actions": "^2.3.2",
-    "axios-mock-adapter": "^1.16.0",
-    "gh-pages": "^2.0.1",
+    "axios-mock-adapter": "^1.17.0",
+    "gh-pages": "^2.1.1",
     "jest": "^24.9.0",
     "parcel-bundler": "^1.12.4",
     "parcel-plugin-bundle-visualiser": "^1.2.0",
     "parcel-plugin-prerender": "^1.4.1",
     "rimraf": "^3.0.0",
-    "sass": "^1.17.2",
+    "sass": "^1.23.7",
     "ts-jest": "^24.2.0",
-    "tslint": "^5.15.0",
+    "tslint": "^5.20.1",
     "typescript": "^3.7.3"
   }
 }
