@@ -26,6 +26,7 @@ it('returns the dom loaded state when present', () => {
         userId: 3,
       },
     ],
+    isInit: true,
   };
 
   const domState = document.createElement('script');
@@ -50,6 +51,7 @@ describe('empty state script tag', () => {
     const expectedState: RootState = {
       counter: 0,
       posts: [],
+      isInit: false,
     };
 
     expect(initialState()).toEqual(expectedState);

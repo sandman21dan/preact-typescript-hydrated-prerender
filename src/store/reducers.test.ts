@@ -1,5 +1,5 @@
-import { counterReducer, postsReducer } from './reducers';
-import { increment, Post, fetchPostsSuccess } from './actions';
+import { counterReducer, postsReducer, isInitReducer } from './reducers';
+import { increment, Post, fetchPostsSuccess, init, initComplete } from './actions';
 
 describe('counter', () => {
   it('increases the counter', () => {
@@ -27,5 +27,18 @@ describe('posts', () => {
 
   it('returns state when no matching action', () => {
     expect(postsReducer([], { type: 'ROFL'})).toEqual([]);
+  });
+});
+
+describe('isInit', () => {
+  it('sets false when init happens', () => {
+    // sets state to false regardless wether it was true or not
+    expect(isInitReducer(false, init())).toEqual(false);
+    expect(isInitReducer(true, init())).toEqual(false);
+  });
+
+  it('sets true when initComplete', () => {
+    expect(isInitReducer(false, initComplete())).toEqual(true);
+    expect(isInitReducer(true, initComplete())).toEqual(true);
   });
 });
