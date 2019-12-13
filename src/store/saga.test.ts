@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { call, put } from 'redux-saga/effects';
+import { call, put, delay } from 'redux-saga/effects';
 
 import { postsSaga } from './saga';
 import { Post, fetchPostsSuccess, initComplete } from './actions';
@@ -30,6 +30,7 @@ describe('postSaga', () => {
     jest.spyOn(store, 'getState').mockReturnValue({
       counter: 0,
       posts: [],
+      isInit: false,
     });
 
     gen = postsSaga();
@@ -51,6 +52,7 @@ describe('postSaga', () => {
       jest.spyOn(store, 'getState').mockReturnValue({
         counter: 3,
         posts: mockResponse,
+        isInit: true,
       });
     });
 

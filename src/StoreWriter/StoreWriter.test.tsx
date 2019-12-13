@@ -32,3 +32,41 @@ it('writes the state to the dom', () => {
   render(<StoreWriter state={mockState} />, appMount);
   expect(appDomState.innerHTML).toContain(JSON.stringify(mockState));
 });
+
+it('does not write state to dom if paused', () => {
+  const mockState = {
+    counter: 5,
+    posts: [
+      {id: 1, data: 'abc'},
+      {id: 2, data: 'xyz'},
+    ],
+  };
+
+  render(<StoreWriter state={mockState} pauseWrite={true} />, appMount);
+  expect(appDomState.innerHTML).toEqual('');
+});
+
+it('updates dom until paused', () => {
+  const mockState = {
+    counter: 5,
+    posts: [
+      {id: 1, data: 'abc'},
+      {id: 2, data: 'xyz'},
+    ],
+  };
+
+  const mockState2 = {
+    ...mockState, counter: 6,
+  }
+
+  const mockState3 = {
+    ...mockState, counter: 7,
+  }
+
+  render(<StoreWriter state={mockState} />, appMount);
+  expect(appDomState.innerHTML).toContain(JSON.stringify(mockState));
+  render(<StoreWriter state={mockState2} />, appMount);
+  expect(appDomState.innerHTML).toContain(JSON.stringify(mockState2));
+  render(<StoreWriter state={mockState3} pauseWrite={true} />, appMount);
+  expect(appDomState.innerHTML).toContain(JSON.stringify(mockState2));
+});
