@@ -30,6 +30,7 @@ describe('postSaga', () => {
     jest.spyOn(store, 'getState').mockReturnValue({
       counter: 0,
       posts: [],
+      isInit: false,
     });
 
     gen = postsSaga();
@@ -51,6 +52,7 @@ describe('postSaga', () => {
       jest.spyOn(store, 'getState').mockReturnValue({
         counter: 3,
         posts: mockResponse,
+        isInit: true,
       });
     });
 
