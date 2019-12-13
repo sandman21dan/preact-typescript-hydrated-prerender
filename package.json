@@ -26,17 +26,17 @@
     "redux-saga": "^1.0.2"
   },
   "devDependencies": {
-    "@types/jest": "^24.0.11",
+    "@types/jest": "^24.0.23",
     "@types/redux-actions": "^2.3.2",
     "axios-mock-adapter": "^1.16.0",
     "gh-pages": "^2.0.1",
-    "jest": "^24.8.0",
+    "jest": "^24.9.0",
     "parcel-bundler": "^1.12.4",
     "parcel-plugin-bundle-visualiser": "^1.2.0",
     "parcel-plugin-prerender": "^1.4.1",
     "rimraf": "^3.0.0",
     "sass": "^1.17.2",
-    "ts-jest": "^24.0.1",
+    "ts-jest": "^24.2.0",
     "tslint": "^5.15.0",
     "typescript": "^3.3.3"
   }
