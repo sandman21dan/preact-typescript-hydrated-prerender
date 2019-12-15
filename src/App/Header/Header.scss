@@ -1,4 +1,4 @@
-.app-header {
+.app-nav {
   height: 4rem;
   background-color: black;
   display: flex;
@@ -7,12 +7,16 @@
   justify-content: left;
   padding: 0 2rem;
 
-  & > * + * {
-    margin-left: 1rem;
-  }
-
   &__link {
     color: white;
     text-decoration: none;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    padding: 0 1rem;
+
+    &--active {
+        background-color: #535353;
+    }
   }
 }
